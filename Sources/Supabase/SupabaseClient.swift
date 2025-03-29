@@ -50,6 +50,9 @@ public final class SupabaseClient: @unchecked Sendable {
       logger: options.global.logger
     )
   )
+    public lazy var httpClient: HTTPClient = {
+        HTTPClient(logger: options.global.logger, fetchHandler: fetchWithAuth)
+    }()
 
   /// Realtime client for Supabase
   public let realtime: RealtimeClient
