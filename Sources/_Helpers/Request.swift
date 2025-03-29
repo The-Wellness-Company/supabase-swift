@@ -4,7 +4,6 @@ import Foundation
   import FoundationNetworking
 #endif
 
-@_spi(Internal)
 public struct HTTPClient: Sendable {
   public typealias FetchHandler = @Sendable (URLRequest) async throws -> (Data, URLResponse)
 
@@ -75,7 +74,7 @@ public struct HTTPClient: Sendable {
   }
 }
 
-@_spi(Internal)
+
 public struct Request: Sendable {
   public var path: String
   public var method: Method
@@ -181,7 +180,7 @@ extension CharacterSet {
   }()
 }
 
-@_spi(Internal)
+
 public struct Response: Sendable {
   public let data: Data
   public let response: HTTPURLResponse
