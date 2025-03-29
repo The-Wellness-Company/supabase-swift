@@ -12,14 +12,14 @@ public class PostgrestBuilder: @unchecked Sendable {
   let configuration: PostgrestClient.Configuration
   let http: HTTPClient
 
-  struct MutableState {
-    var request: Request
+public struct MutableState: Sendable {
+    public var request: Request
 
     /// The options for fetching data from the PostgREST server.
     var fetchOptions: FetchOptions
   }
 
-  let mutableState: LockIsolated<MutableState>
+  public let mutableState: LockIsolated<MutableState>
 
   init(
     configuration: PostgrestClient.Configuration,
